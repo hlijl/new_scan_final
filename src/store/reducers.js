@@ -3,11 +3,12 @@ const initialState = {
 };
 
 function myReducer(state = initialState, action) {
-  if (action.type === "CHANGE_MENU_STATUS") {
-    return { ...state, menuStatus: !state.menuStatus };
+  switch (action.type) {
+    case "CHANGE_MENU_STATUS":
+      return { ...state, menuStatus: !state.menuStatus };
+    default:
+      return state;
   }
-
-  return state;
 }
 
 export default myReducer;
